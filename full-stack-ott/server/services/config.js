@@ -21,7 +21,7 @@ async function connectDB() {
     }
 }
 
-const db = client.db("sample_mflix")
+const db = client.db("posts")
 
 module.exports = { connectDB, db };
 
