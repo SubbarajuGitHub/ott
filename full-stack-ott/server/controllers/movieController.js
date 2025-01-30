@@ -1,11 +1,13 @@
+const Movie = require("../models/movieModal");
 const { db } = require("../services/config");
 
 const getAllMovies = async (req, res) => {
   try {
-    const allMovies = await db.collection("posts").find({}).toArray();
-    console.log(allMovies, "posts");
 
-    res.status(200).json(allMovies);
+    const newMovie = new Movie()
+    const result = await newMovie.getMovie()
+
+    res.status(200).json(result);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
